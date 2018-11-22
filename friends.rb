@@ -43,3 +43,16 @@ def fave_food_array(people)
   end
   return food_array
 end
+
+
+def no_friends(people)
+  no_friends_array = Array.new
+  for name in people
+
+    if name[:friends].length == 0
+      no_friends_array << name[:name]
+    end
+
+  end
+  return no_friends_array
+end
