@@ -101,11 +101,11 @@ class TestFriends < MiniTest::Test
   # 5. For a given person, remove a specific name from their list of friends
   # (hint: Same as above, testing for the length of the array should be sufficient)
 
-def test_remove_friend
-  remove_friend(@person3, "Velma")
-  new_length = @person2[:friends].length
-  assert_equal(1,new_length)
-end
+  def test_remove_friend
+    remove_friend(@person3, "Velma")
+    new_length = @person2[:friends].length
+    assert_equal(1,new_length)
+  end
 
   # 6. Find the total of everyone's money
   # (hint: use the @people array, remember how we checked the total number of eggs yesterday?)
@@ -119,35 +119,27 @@ end
   # (hint: our function will probably need 3 arguments passed to it... the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed, maybe two assertions?)
 
-def test_loan_money
-  result = loan_money(@person1, @person2, 1)
-  person2_money = @person2[:monies]
-  person1_money = @person1[:monies]
-  assert_equal(0, person1_money)
-  assert_equal(3,person2_money)
-end
+  def test_loan_money
+    result = loan_money(@person1, @person2, 1)
+    person2_money = @person2[:monies]
+    person1_money = @person1[:monies]
+    assert_equal(0, person1_money)
+    assert_equal(3,person2_money)
+  end
 
   # 8. Find the set of everyone's favourite food joined together
   # (hint: concatenate the favourites/snack arrays together)
 
-def test_fave_food_array
-  result_array = fave_food_array(@people)
-  assert_equal(["charcuterie","soup","bread","Scooby snacks","spaghetti", "ratatouille","spinach"], result_array)
-end
+  def test_fave_food_array
+    result_array = fave_food_array(@people)
+    assert_equal(["charcuterie","soup","bread","Scooby snacks","spaghetti", "ratatouille","spinach"], result_array)
+  end
 
   # 9. Find people with no friends
   # (hint: return an array, there might be more people in the future with no friends!)
 
-
-def test_no_friends
-  result = no_friends(@people)
-  assert_equal(["Daphne"] , result )
-end
-
-
-
-
-
-
-
+  def test_no_friends
+    result = no_friends(@people)
+    assert_equal(["Daphne"] , result )
+  end
 end

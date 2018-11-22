@@ -21,12 +21,17 @@ def remove_friend(person, name)
   person[:friends].delete(name)
 end
 
+# def total_money(people)
+#   total = 0
+#   for person in people
+#     total += person[:monies]
+#   end
+#   return total
+# end
+
 def total_money(people)
-  total = 0
-  for person in people
-    total += person[:monies]
-  end
-  return total
+  total_2 = people.map { |money| money[:monies]}.sum
+  return total_2
 end
 
 def loan_money(lender, lendee, num)
