@@ -16,3 +16,7 @@ end
 def add_friend(person, name)
   person[:friends]<< name
 end
+
+def remove_friend(person, name)
+  person[:friends].delete(name)
+end
