@@ -35,3 +35,11 @@ def loan_money(lender, lendee, num)
   new_money_lendee = lendee[:monies] += num
   return new_money_lendee
 end
+
+def fave_food_array(people)
+  food_array = Array.new
+  for foods in people
+    food_array.concat(foods[:favourites][:snacks])
+  end
+  return food_array
+end
